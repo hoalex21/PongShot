@@ -1,11 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://dcbn3mtn1xj24"]
+[gd_scene load_steps=5 format=3 uid="uid://dcbn3mtn1xj24"]
 
 [ext_resource type="PackedScene" uid="uid://b2frdvdw4rkgy" path="res://player.tscn" id="1_rpub5"]
 [ext_resource type="Script" path="res://game.gd" id="1_wn8d3"]
 [ext_resource type="PackedScene" uid="uid://bovy15vutc4av" path="res://ball.tscn" id="2_3o8db"]
+[ext_resource type="PackedScene" uid="uid://c7oj4ov2f8aad" path="res://ufo.tscn" id="2_w1tm4"]
 
 [node name="Game" type="Node"]
 script = ExtResource("1_wn8d3")
+ufo_mob = ExtResource("2_w1tm4")
 
 [node name="Player" parent="." instance=ExtResource("1_rpub5")]
 position = Vector2(540, 1680)

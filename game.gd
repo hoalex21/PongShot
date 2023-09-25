@@ -1,10 +1,14 @@
 extends Node
 
-const MAX_BOUNCE_ANGLE = PI / 4
+const MAX_BOUNCE_ANGLE = PI / 6
+
+@export var ufo_mob : PackedScene
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	set_process(true)
+	spawn_mob(ufo_mob)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -27,3 +31,10 @@ func _on_player_hit(area):
 		print(relative_intersection)
 		
 		get_node(node_path).hit_paddle(x)
+
+
+func spawn_mob(mob_scene):
+	var mob = mob_scene.instantiate()
+	var mob_position = Vector2(randf_range(mob.min_x, mob.max_x), mob.initial_y)
+	mob.set_position(mob_position)
+	add_child(mob)

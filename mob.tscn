@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cvlvk1cc8u77f"]
+
+[ext_resource type="Script" path="res://mob.gd" id="1_n07uu"]
+
+[node name="Mob" type="Node2D"]
+script = ExtResource("1_n07uu")
+metadata/_edit_group_ = true

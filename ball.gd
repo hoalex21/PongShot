@@ -1,9 +1,10 @@
 extends Area2D
 
-@export var speed = 400
+@export var speed = 600
 var screen_size
 var rng = RandomNumberGenerator.new()
 var direction
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
