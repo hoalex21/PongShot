@@ -11,5 +11,8 @@ func _process(delta):
 
 
 func _on_player_hit(area):
-	if area.get_name() == "Ball":
-		get_node(NodePath(area.get_name())).reverse_direction()
+	var name = area.get_name()
+	var node_path = NodePath(name)
+	
+	if name == "Ball":
+		get_node(node_path).hit_paddle()
