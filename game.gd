@@ -16,11 +16,19 @@ func _process(delta):
 	pass
 
 
+func spawn_mob(mob_scene):
+	var mob = mob_scene.instantiate()
+	var mob_position = Vector2(randf_range(mob.min_x, mob.max_x), mob.initial_y)
+	mob.set_position(mob_position)
+	add_child(mob)
+
+
 func _on_player_hit(area):
-	var name = area.get_name()
-	var node_path = NodePath(name)
+	var area_name = area.get_name()
+	var node_path = NodePath(area_name)
+	var node = get_node(node_path)
 	
-	if name == "Ball":
+	if node is Ball:
 		var ball_pos = area.get_position()
 		var player_pos = $Player.get_position()
 		
@@ -31,16 +39,9 @@ func _on_player_hit(area):
 		get_node(node_path).hit_paddle(x)
 
 
-func spawn_mob(mob_scene):
-	var mob = mob_scene.instantiate()
-	var mob_position = Vector2(randf_range(mob.min_x, mob.max_x), mob.initial_y)
-	mob.set_position(mob_position)
-	add_child(mob)
-
-
 func _on_ball_hit(area):
-	var name = area.get_name()
-	var node_path = NodePath(name)
+	var area_name = area.get_name()
+	var node_path = NodePath(area_name)
 	var node = get_node(node_path)
 	
 	if node is Mob:

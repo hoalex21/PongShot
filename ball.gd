@@ -1,5 +1,7 @@
 extends Area2D
 
+class_name Ball
+
 signal hit(area)
 
 @export var speed = 600
