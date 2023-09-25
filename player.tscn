@@ -7,7 +7,7 @@
 size = Vector2(64, 8)
 
 [node name="Player" type="Area2D"]
-scale = Vector2(3, 3)
+scale = Vector2(2, 2)
 script = ExtResource("1_ekces")
 metadata/_edit_group_ = true
 
