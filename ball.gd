@@ -26,5 +26,6 @@ func _process(delta):
 	set_position(pos)
 
 
-func hit_paddle():
+func hit_paddle(x):
+	direction.x = x
 	direction.y = -direction.y
