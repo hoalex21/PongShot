@@ -15,5 +15,9 @@ position = Vector2(540, 1680)
 [node name="Ball" parent="." instance=ExtResource("2_3o8db")]
 position = Vector2(540, 960)
 
+[node name="MobTimer" type="Timer" parent="."]
+wait_time = 5.0
+
 [connection signal="hit" from="Player" to="." method="_on_player_hit"]
 [connection signal="hit" from="Ball" to="." method="_on_ball_hit"]
+[connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]

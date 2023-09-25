@@ -2,6 +2,8 @@ extends Node2D
 
 class_name Mob
 
+signal hit
+
 @export var speed = 20
 @export var min_x = 0
 @export var max_x = 1080

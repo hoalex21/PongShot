@@ -7,8 +7,8 @@ const MAX_BOUNCE_ANGLE = PI / 6
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$MobTimer.start()
 	set_process(true)
-	spawn_mob(ufo_mob)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -41,6 +41,11 @@ func spawn_mob(mob_scene):
 func _on_ball_hit(area):
 	var name = area.get_name()
 	var node_path = NodePath(name)
+	var node = get_node(node_path)
 	
-	if name == "Ufo":
-		get_node(node_path).take_damage($Ball.damage)
+	if node is Mob:
+		node.take_damage($Ball.damage)
+
+
+func _on_mob_timer_timeout():
+	spawn_mob(ufo_mob)
