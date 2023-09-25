@@ -21,7 +21,7 @@ func _process(delta):
 		pos.x += speed * delta
 	
 	set_position(pos)
-	position = position.clamp(Vector2(96, 1620), Vector2(984, 1620))
+	position = position.clamp(Vector2(64, 1620), Vector2(1016, 1620))
 
 
 func _on_area_entered(area):

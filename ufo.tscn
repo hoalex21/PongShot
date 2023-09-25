@@ -11,6 +11,7 @@ position = Vector2(2.08165e-12, 2.08165e-12)
 scale = Vector2(7, 7)
 script = ExtResource("1_5blgm")
 min_x = 80
+max_x = 1000
 initial_y = -50
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
