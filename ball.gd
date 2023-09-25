@@ -1,6 +1,9 @@
 extends Area2D
 
+signal hit(area)
+
 @export var speed = 600
+@export var damage = 1
 var screen_size
 var rng = RandomNumberGenerator.new()
 var direction
@@ -30,3 +33,7 @@ func _process(delta):
 func hit_paddle(x):
 	direction.x = x
 	direction.y = -direction.y
+
+
+func _on_area_entered(area):
+	hit.emit(area)

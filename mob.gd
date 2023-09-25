@@ -6,6 +6,7 @@ class_name Mob
 @export var min_x = 0
 @export var max_x = 1080
 @export var initial_y = 0
+@export var health = 1
 var screen_size
 
 
@@ -18,3 +19,10 @@ func _ready():
 func _process(delta):
 	var y = speed * delta
 	set_position(Vector2(get_position().x, get_position().y + y))
+
+
+func take_damage(damage):
+	health -= damage
+	
+	if health < 1:
+		queue_free()

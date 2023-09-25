@@ -38,3 +38,13 @@ func spawn_mob(mob_scene):
 	var mob_position = Vector2(randf_range(mob.min_x, mob.max_x), mob.initial_y)
 	mob.set_position(mob_position)
 	add_child(mob)
+
+
+func _on_ball_hit(area):
+	var name = area.get_name()
+	var node_path = NodePath(name)
+	
+	print(name)
+	
+	if name == "Ufo":
+		get_node(node_path).take_damage($Ball.damage)

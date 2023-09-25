@@ -16,3 +16,4 @@ position = Vector2(540, 1680)
 position = Vector2(540, 960)
 
 [connection signal="hit" from="Player" to="." method="_on_player_hit"]
+[connection signal="hit" from="Ball" to="." method="_on_ball_hit"]

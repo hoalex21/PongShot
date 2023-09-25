@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s5aq3"]
 size = Vector2(16, 10)
 
-[node name="ufo" type="Area2D"]
+[node name="Ufo" type="Area2D"]
 position = Vector2(2.08165e-12, 2.08165e-12)
 scale = Vector2(10, 10)
 script = ExtResource("1_5blgm")
