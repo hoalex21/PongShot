@@ -28,8 +28,6 @@ func _on_player_hit(area):
 		
 		var x = -relative_intersection.normalized().x * MAX_BOUNCE_ANGLE
 		
-		print(relative_intersection)
-		
 		get_node(node_path).hit_paddle(x)
 
 
