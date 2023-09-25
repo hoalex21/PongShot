@@ -42,7 +42,5 @@ func _on_ball_hit(area):
 	var name = area.get_name()
 	var node_path = NodePath(name)
 	
-	print(name)
-	
 	if name == "Ufo":
 		get_node(node_path).take_damage($Ball.damage)
